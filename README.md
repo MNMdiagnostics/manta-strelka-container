@@ -1,0 +1,1 @@
+# manta-strelka-container
