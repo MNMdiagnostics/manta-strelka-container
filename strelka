@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# ORDER OF ARGUMENTS: GERMLINE/SOMATIC, NO OF JOBS, BAM / (NORMAL, TUMOUR), REFERENCE FASTA, RUN DIR
+
+if [ $1 == 'germline' ]
+then
+	tools/strelka-2.9.2.centos6_x86_64/bin/configureStrelkaGermlineWorkflow.py \
+	    --bam $3 \
+	    --referenceFasta $4 \
+	    --runDir $5
+	python $5/runWorkflow.py -m local -j $2
+
+elif [ $1 == 'somatic' ]
+then
+	tools/strelka-2.9.2.centos6_x86_64/bin/configureStrelkaSomaticWorkflow.py \
+	    --normalBam $3 \
+	    --tumorBam $4 \
+	    --referenceFasta $5 \
+	    --runDir $6
+	python $6/runWorkflow.py -m local -j $2
+fi
