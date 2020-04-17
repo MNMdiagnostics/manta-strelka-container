@@ -4,8 +4,8 @@
 MANTA_DIR='/tools/manta-1.5.0.centos6_x86_64//bin'
 
 $MANTA_DIR/configManta.py \
-    --normalBam $3 \
-    --tumorBam $4 \
-    --referenceFasta $5 \
-    --runDir $6
-python $6/runWorkflow.py -m local -j $2
+    --normalBam $2 \
+    --tumorBam $3 \
+    --referenceFasta $4 \
+    --runDir $5
+python $5/runWorkflow.py -m local -j $1
