@@ -21,5 +21,8 @@ RUN cd ${tools_dir} && \
   wget https://github.com/Illumina/strelka/releases/download/v2.9.2/strelka-2.9.2.centos6_x86_64.tar.bz2 && \
   tar xvjf strelka-2.9.2.centos6_x86_64.tar.bz2
 
-RUN wget https://raw.githubusercontent.com/MNMdiagnostics/manta-strelka-container/master/strelka && \
-  chmod 777 strelka
+RUN wget https://raw.githubusercontent.com/MNMdiagnostics/manta-strelka-container/master/run_strelka && \
+  chmod 700 run_strelka
+
+RUN wget https://raw.githubusercontent.com/MNMdiagnostics/manta-strelka-container/master/run_manta && \
+  chmod 700 run_manta
